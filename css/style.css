@@ -341,7 +341,7 @@
     align-self: center;
 
     font-family: var(--font-pinyon);
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .lb-top2 {
@@ -1029,7 +1029,7 @@ textarea::placeholder {
 
 .invitation-card .header-text {
     font-family: "UVNKe Chuyen3", sans-serif;
-    font-size: 0.73rem;
+    font-size: 11.68px;
     font-weight: normal;
     color: #232916ff;
     padding-top: 100px;
@@ -1037,7 +1037,7 @@ textarea::placeholder {
 
 .invitation-card .names-section {
     font-family: "Pinyon Script", sans-serif;
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: normal;
     color: var(--header-color);
     padding-top: 10px;
@@ -1050,7 +1050,7 @@ textarea::placeholder {
 .invitation-card .save-date,
 .invitation-card .celebration-text {
     font-family: "SVG-Gotham", sans-serif;
-    font-size: 0.5rem;
+    font-size: 8px;
     font-weight: normal;
     letter-spacing: 1.6px;
     text-transform: uppercase;
@@ -1071,7 +1071,7 @@ textarea::placeholder {
 
 .invitation-card .invitation-button {
     font-family: "SVG-Gotham", sans-serif;
-    font-size: 0.4rem;
+    font-size: 6.4px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
