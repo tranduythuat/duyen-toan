@@ -410,8 +410,8 @@
 }
 
 .inv label.lb-inv {
-    padding-top: 10px;
-    margin-bottom: 20%;
+    padding-top: 10%;
+    margin-bottom: 10%;
 }
 
 .box-map {
@@ -421,13 +421,13 @@
 .kinhmoi {
     font-family: var(--font-lora);
     text-transform: uppercase;
-    font-size: .5em;
+    font-size: .6em;
     margin-bottom: 5px;
 }
 
 .lb-inv {
     font-family: var(--font-pinyon);
-    font-size: 2.2em;
+    font-size: 2.4em;
 }
 
 .img-inv {
@@ -445,12 +445,12 @@
 
 .lb-time {
     font-family: var(--font-lora);
-    font-size: .8em;
+    font-size: .9em;
 }
 
 .lunar-date {
     font-family: var(--font-lora);
-    font-size: .7em;
+    font-size: .8em;
     font-style: italic;
 }
 
@@ -462,7 +462,7 @@
 
 .add2 {
     font-family: var(--font-lora);
-    font-size: .5em;
+    font-size: .65em;
 }
 
 .maps {
@@ -497,17 +497,17 @@
 
 .lb-timeline1 {
     font-family: var(--font-pinyon);
-    font-size: 2em;
+    font-size: 2.2em;
 }
 
 .lb-timeline2 {
     font-family: var(--font-lora);
-    font-size: .5em;
+    font-size: .6em;
     letter-spacing: 0.5px;
 }
 
 .img-timeline {
-    width: 15%;
+    width: 25%;
     margin-bottom: 15px;
 }
 
@@ -548,7 +548,7 @@
 
 .lb-dress2 {
     font-family: var(--font-lora);
-    font-size: .5em;
+    font-size: .6em;
     letter-spacing: .5px;
     word-spacing: .5px;
     width: 60%;
