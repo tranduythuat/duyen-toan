@@ -295,7 +295,7 @@
 
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxgPMaOgT_WwTpxvhDfLMLvpG27EO9cTFebhACu-UbEqWjmou1cCU0sYa0urgECblui/exec?sheet=en';
+        const scriptURL = '?sheet=confirm';
         const form = document.forms['ken-truc'];
 
         form.addEventListener('submit', e => {
@@ -310,48 +310,37 @@
             const number_guest = data.GUEST;
             const wish = data.WISH;
 
-            // Gửi dữ liệu form đi
+            // Gửi dữ liệu form đi. Google Apps Script không trả về CORS header cho localhost,
+            // nên cần sử dụng mode: 'no-cors' để trình duyệt vẫn gửi request được.
             fetch(scriptURL, {
                 method: 'POST',
+                mode: 'no-cors',
+                headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
                 body: new URLSearchParams({ name, confirm, number_guest, wish })
             })
-                .then(response => {
-                    if (response.ok) {
-                        // Nếu dữ liệu gửi thành công, làm mới lại form
-                        form.reset(); // Làm mới lại form
+                .then(() => {
+                    // Nếu dữ liệu gửi thành công, làm mới lại form
+                    form.reset(); // Làm mới lại form
 
-                        document.getElementById('loading-container').style.display = 'none';
+                    document.getElementById('loading-container').style.display = 'none';
 
-                        Swal.fire({
-                            title: 'Success!',
-                            text: 'Thank you for your feedback, the information has been sent to the bride and groom!!',
-                            imageWidth: 300,
-                            imageHeight: 200,
-                            confirmButtonText: 'Close',
-                            background: '#f8f8f8',
-                            padding: '20px',
-                            customClass: {
-                                popup: 'custom-popup',
-                                title: 'custom-title',
-                                confirmButton: 'custom-confirm-button'
-                            },
-                            didOpen: () => {
-                                document.querySelector('.swal2-popup').style.borderRadius = '10px'; // Bo tròn các góc
-                            }
-                        });
-                    } else {
-                        // Nếu gặp lỗi khi gửi dữ liệu
-                        console.error('Error!', response);
-
-                        document.getElementById('loading-container').style.display = 'none';
-
-                        Swal.fire({
-                            title: 'Oops!',
-                            text: 'Error lost, please try again for us!',
-                            icon: 'error',
-                            confirmButtonText: 'OK'
-                        });
-                    }
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Thank you for your feedback, the information has been sent to the bride and groom!!',
+                        imageWidth: 300,
+                        imageHeight: 200,
+                        confirmButtonText: 'Close',
+                        background: '#f8f8f8',
+                        padding: '20px',
+                        customClass: {
+                            popup: 'custom-popup',
+                            title: 'custom-title',
+                            confirmButton: 'custom-confirm-button'
+                        },
+                        didOpen: () => {
+                            document.querySelector('.swal2-popup').style.borderRadius = '10px'; // Bo tròn các góc
+                        }
+                    });
                 })
                 .catch(error => {
                     // Xử lý lỗi nếu có
